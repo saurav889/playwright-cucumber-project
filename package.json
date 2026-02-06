@@ -1,0 +1,21 @@
+{
+  "name": "playwright-cucumber-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --require features/steps/**/*.js --format json:reports/cucumber-report.json",
+    "test1": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "baseURL": "https://devgroupmanager.locumate.com.au",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.1",
+    "cucumber-html-reporter": "^7.2.0",
+    "playwright": "^1.58.1"
+  }
+}
