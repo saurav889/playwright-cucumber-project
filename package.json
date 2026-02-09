@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require features/steps/**/*.js --format json:reports/cucumber-report.json",
+    "test": "cucumber-js --require features/support/env.js --require features/**/*.js --format json:reports/cucumber-report.json",
     "test1": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "baseURL": "https://devgroupmanager.locumate.com.au",
   "devDependencies": {
     "@cucumber/cucumber": "^12.6.0",
     "@playwright/test": "^1.58.1",
     "cucumber-html-reporter": "^7.2.0",
+    "dotenv": "^17.2.4",
     "playwright": "^1.58.1"
+  },
+  "dependencies": {
+    "expect": "^30.2.0"
   }
 }
