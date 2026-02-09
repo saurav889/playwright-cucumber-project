@@ -1,0 +1,118 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "internal-pool-functionality;internal-pool-list-invite-functionality",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Internal pool list invite functionality",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2089153800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 3,
+            "name": "the user navigate to the \"Internal Pool List\" page",
+            "match": {
+              "location": "features\\steps\\groupManager.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5256063400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 4,
+            "name": "the user click on invite new user icon button",
+            "match": {
+              "location": "features\\steps\\internalPoolList.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1018488199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "the user enter the \"Simanta\" \"Das\" \"simanta+das@aerion.com.au\" \"0412345678\" in the respective fields",
+            "match": {
+              "location": "features\\steps\\internalPoolList.steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 276564300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "the user select the \"Internal Employee\" from dropdown",
+            "match": {
+              "location": "features\\steps\\internalPoolList.steps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 418185799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user selects the \"Nurse\" from dropdown",
+            "match": {
+              "location": "features\\steps\\internalPoolList.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1017233399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the user click on \"Save\" button",
+            "match": {
+              "location": "features\\steps\\groupManager.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 89805899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 678014300
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "internal-pool-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Internal pool functionality",
+    "tags": [],
+    "uri": "features\\internalPoolList.feature"
+  }
+]

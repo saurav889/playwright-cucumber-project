@@ -1,48 +1,45 @@
-const { Given, When, Then, Before, After} = require('@cucumber/cucumber');
-const { chromium } = require('@playwright/test');
+const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
-const { baseURL } = require('../../package.json');
-const { setDefaultTimeout } = require('@cucumber/cucumber');
-setDefaultTimeout(30 * 1000); // 30 seconds
+const { chromium } = require('playwright');
 
+const CustomWorld = require('../support/world');
 
-let browser;
-let page;
-
-Before(async () => {
-    this.browser = await chromium.launch({ headless: false });
-    this.context = await this.browser.newContext();
-    this.page = await this.context.newPage();
+Given('I open the login page', async function () {
+  await this.page.goto(this.baseURL);
 });
 
-After(async () => {
-  await this.page.close();
+When('I enter valid credentials', async function () {
+  await this.page.fill('input[name="username"]', this.username);
+  await this.page.fill('input[name="password"]', this.password);
 });
 
-Given('I open the {string} page', async (endpoint) => {
-  await this.page.goto(`${baseURL}${endpoint}`);;
+When('I enter invalid credentials', async function () {
+  await this.page.fill('input[name="username"]', 'invalidUsername');
+  await this.page.fill('input[name="password"]', 'invalidPassword');
 });
 
-When('the user enter the {string} and {string}', async (username, password) => {
-  await this.page.fill('input[name="username"]', username);
-  await this.page.fill('input[name="password"]', password);
+When('I click the "Sign In" button', async function () {
+  await this.page.click('button:has-text("Sign In")');
 });
 
-When('the user click on the {string} button', async (buttonText) => {
+Then('I should be redirected to the dashboard page', async function () {
+  const dashboardUrl = 'https://devgroupmanager.locumate.com.au/group-manager/dashboard';
+  await this.page.waitForURL(dashboardUrl);
+  const url = this.page.url();
+  expect(url).toBe(dashboardUrl);
+});
+
+Then('I should see an error message', async function () {
+  const errorMessage = await this.page.locator('div[role="alert"]');
+  await expect(errorMessage).toBeVisible();
+});
+
+Then('the user click on the avatar button', async function () {
+const avatarButton = this.page.locator('button[type="button"]').nth(3);
+await avatarButton.waitFor({ state: 'visible', timeout: 5000 });
+await avatarButton.click();
+});
+
+Then ('the user click on the {string} button', async function (buttonText)  {
   await this.page.click(`button:has-text("${buttonText}")`);
-});
-
-Then('the user should be redirected to the dashboard page', async () => {
-  await this.page.waitForURL('**/group-manager/dashboard', { timeout: 10000 });
-  await expect(this.page).toHaveURL(/\/group-manager\/dashboard/);
-});
-
-Then('{string} message should be displayed', async (messageText) => {
-  const messageLocator = this.page.locator(`text=${messageText}`);
-  await expect(messageLocator).toBeVisible();
-});
-
-Then('the user click on the avatar button', async () => {
-  const buttons = this.page.locator('button[type=button]');
-  await buttons.nth(3).click();
 });

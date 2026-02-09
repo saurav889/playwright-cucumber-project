@@ -1,4 +1,4 @@
-Feature: Group Manager filter functionality
+Feature: Group Manager functionality
   Scenario: Verify Group Manager filter with valid credentials
     When the user navigate to the "Group Manager" page
     And the user enter the "<name>" in the text box
@@ -43,4 +43,3 @@ Feature: Group Manager filter functionality
     And the user click on "Bulk assign pharmacy tags for" button
     And the user click on "Save" button
     Then the user should see "Success" message
-  

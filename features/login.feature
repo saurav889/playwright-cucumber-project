@@ -1,28 +1,20 @@
 Feature: Login functionality
-  Scenario: Login With valid credentials
-    Given I open the "/" page
-    When the user enter the "<Username>" and "<Password>"
-    And the user click on the " Sign In " button
-    Then the user should be redirected to the dashboard page
+  Scenario: Login with valid credentials
+    Given I open the login page
+    When I enter valid credentials
+    And I click the "Sign In" button
+    Then I should be redirected to the dashboard page
 
-  Examples:
-    | Username        | Password  |
-    | ak@gmail.com    | password  |
-
-  Scenario: Login With invalid credentials
-    Given I open the "/" page
-    When the user enter the "<Username>" and "<Password>"
-    And the user click on the " Sign In " button
-    Then "TypeError: Failed to fetch" message should be displayed
-
-  Examples:
-    | Username       | Password |
-    | a@gmail.com    | passwor  |
+  Scenario: Login with invalid credentials
+    Given I open the login page
+    When I enter invalid credentials
+    And I click the "Sign In" button
+    Then I should see an error message
   
   Scenario: Logout functionality
-    Given I open the "/" page
-    When the user enter the "<Username>" and "<Password>"
-    And the user click on the "Sign In" button
+    Given I open the login page
+    When I enter valid credentials
+    And I click the "Sign In" button
     And the user click on the avatar button
     Then the user click on the "Logout" button
 
