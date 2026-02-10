@@ -6,7 +6,7 @@
         "description": "",
         "id": "internal-pool-functionality;internal-pool-list-invite-functionality",
         "keyword": "Scenario",
-        "line": 12,
+        "line": 25,
         "name": "Internal pool list invite functionality",
         "steps": [
           {
@@ -14,85 +14,98 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2089153800
+              "duration": 4307794299
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 3,
+            "line": 15,
             "name": "the user navigate to the \"Internal Pool List\" page",
             "match": {
               "location": "features\\steps\\groupManager.steps.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 5256063400
+              "duration": 8064799700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 4,
-            "name": "the user click on invite new user icon button",
+            "line": 16,
+            "name": "the user click on internal pool user icon button",
             "match": {
-              "location": "features\\steps\\internalPoolList.steps.js:9"
+              "location": "features\\steps\\internalPoolList.steps.js:42"
             },
             "result": {
               "status": "passed",
-              "duration": 1018488199
+              "duration": 11265574300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 5,
-            "name": "the user enter the \"Simanta\" \"Das\" \"simanta+das@aerion.com.au\" \"0412345678\" in the respective fields",
+            "line": 17,
+            "name": "the user selected \"NSW\" from dropdown",
             "match": {
-              "location": "features\\steps\\internalPoolList.steps.js:13"
+              "location": "features\\steps\\internalPoolList.steps.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 276564300
+              "duration": 365511700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 6,
-            "name": "the user select the \"Internal Employee\" from dropdown",
+            "line": 18,
+            "name": "the users selected \"Contractor\" from dropdown",
             "match": {
-              "location": "features\\steps\\internalPoolList.steps.js:26"
+              "location": "features\\steps\\internalPoolList.steps.js:57"
             },
             "result": {
               "status": "passed",
-              "duration": 418185799
+              "duration": 635936000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 7,
-            "name": "the user selects the \"Nurse\" from dropdown",
+            "line": 19,
+            "name": "the user enter \"Daniel Kar Meng Kong\" in the input field",
             "match": {
-              "location": "features\\steps\\internalPoolList.steps.js:35"
+              "location": "features\\steps\\internalPoolList.steps.js:66"
             },
             "result": {
               "status": "passed",
-              "duration": 1017233399
+              "duration": 116642200
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
-            "name": "the user click on \"Save\" button",
+            "line": 20,
+            "name": "the user click on \"Filter\" button",
             "match": {
               "location": "features\\steps\\groupManager.steps.js:30"
             },
             "result": {
               "status": "passed",
-              "duration": 89805899
+              "duration": 239606899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the user verfy \"Daniel Kar Meng Kong\" \"Contractor\"",
+            "match": {
+              "location": "features\\steps\\internalPoolList.steps.js:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33683299
             }
           },
           {
@@ -100,7 +113,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 678014300
+              "duration": 1108114799
             }
           }
         ],

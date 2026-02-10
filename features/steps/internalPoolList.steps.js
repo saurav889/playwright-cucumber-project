@@ -38,3 +38,38 @@ Then("the user selects the {string} from dropdown", async function (employeeType
     });
     await option2.click();
 });
+
+Then("the user click on internal pool user icon button", async function () {
+  await this.page.locator("(//a[contains(@aria-describedby,'v-tooltip-')])[1]").click();
+
+  await this.page.waitForTimeout(10000);
+});
+
+Then("the user selected {string} from dropdown", async function (tag) {
+  const dropdown3 = this.page.locator("div.v-field__input").nth(0);
+    await dropdown3.click();
+    const option3 = this.page.locator(".v-list-item-title", {
+      hasText: tag,
+    });
+    await option3.click();
+});
+
+Then("the users selected {string} from dropdown", async function (type) {
+  const dropdown4 = this.page.locator("div.v-field__input").nth(1);
+    await dropdown4.click();
+    const option4 = this.page.locator(".v-list-item-title", {
+      hasText: type,
+    });
+    await option4.click();
+});
+
+Then("the user enter {string} in the input field", async function (searchByName) {
+  await this.page.locator("input[placeholder='Enter name']").fill(searchByName);
+});
+
+Then("the user verfy {string} {string}", async function (type, searchByName) {
+  const resultType = this.page.locator("td[class='v-data-table__td v-data-table-column--align-start']").nth(0);
+  const resultName = this.page.locator("td[class='v-data-table__td v-data-table-column--align-start']").nth(3);
+  await expect(resultType).toHaveText(type);
+  await expect(resultName).toHaveText(searchByName);
+});

@@ -2,7 +2,7 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('@playwright/test');
 const { chromium } = require('playwright');
 
-const CustomWorld = require('../support/world');
+// const CustomWorld = require('../support/world');
 
 Given('I open the login page', async function () {
   await this.page.goto(this.baseURL);
